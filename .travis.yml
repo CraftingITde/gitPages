@@ -1,0 +1,18 @@
+sudo: required
+language: bash
+services:
+  - docker
+
+script:
+  - docker build -t gitpages .
+
+deploy:
+  - provider: script
+    script: bash docker_push_dev.sh
+    on:
+      branch: master
+
+  - provider: script
+    script: bash docker_push_tag.sh
+    on:
+      tags: true

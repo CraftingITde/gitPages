@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+  reverse-proxy:
+    image: traefik
+    command: --api --docker
+    ports:
+      - "80:80"
+      - "8090:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  whoami:
+    image: containous/whoami
+    labels:
+      - "traefik.frontend.rule=Host:whoami.test.local"
+  # Basis Doku
+  repo_a:
+    image: craftingit/gitpages
+    restart: always
+    env_file:
+      - base.env
+    environment:
+      - GIT_OWNER=CraftingIT
+      - GIT_REPO=GitPages
+    labels:
+      - "traefik.frontend.rule=Host:repoa.test.local"
+      - "traefik.port=8080"

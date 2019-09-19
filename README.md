@@ -1,4 +1,4 @@
-# GitPages
+# GitPages [![Build Status](https://travis-ci.com/kstruessmann/GitPages.svg?token=ajp3U25Rb9WSHqDoV4Ci&branch=master)](https://travis-ci.com/kstruessmann/GitPages)
 
 Simple webserver for git repositories. To update just call the /deploy.php 
 

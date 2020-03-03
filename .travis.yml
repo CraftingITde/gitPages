@@ -1,0 +1,18 @@
+language: shell
+os: linux
+services:
+  - docker
+
+script:
+  - docker build -t gitpages .
+
+deploy:
+  - provider: script
+    script: bash .ci/docker_push_dev.sh
+    on:
+      branch: master
+
+  - provider: script
+    script: bash .ci/docker_push_tag.sh
+    on:
+      tags: true

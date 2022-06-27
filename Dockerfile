@@ -1,4 +1,4 @@
-FROM nginx:1.19.7-alpine
+FROM nginx:1.23.0-alpine
 
 RUN apk add --no-cache --upgrade \
   git \

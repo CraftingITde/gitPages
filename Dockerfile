@@ -4,8 +4,8 @@ RUN apk add --no-cache --upgrade \
   git \
   openssh \
   bash \
-  php8 \
-  php8-fpm \
+  php82 \
+  php82-fpm \
   supervisor \
   curl
 

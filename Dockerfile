@@ -1,4 +1,4 @@
-FROM nginx:1.29.7-alpine
+FROM nginx:1.29.8-alpine
 
 RUN apk add --no-cache --upgrade --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
   git \
